@@ -1,0 +1,167 @@
+/* ---------- General Reset ---------- */
+* { 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lucida Sans", sans-serif;    
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* ---------- Simple 3x3 Container Grid ---------- */
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: dodgerblue;
+    padding: 10px;
+    gap: 10px;
+}
+
+.container > div {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* ---------- Dashboard Grid Layout ---------- */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header header header header header"
+        "menu main main main main right"
+        "footer footer footer footer footer footer";
+    gap: 10px;
+    margin-top: 30px;
+}
+
+/* Grid Items */
+.grid-container > div {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Header */
+.item1 {
+    grid-area: header;
+    background-color: purple;
+    color: white;
+    text-align: center;
+}
+
+.item1 > h1 {
+    font-size: 40px;
+}
+
+/* Menu */
+.item2 {
+    grid-area: menu;
+}
+
+.item2 ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item2 li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: blue;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.item2 li:hover {
+    background-color: lightskyblue;
+    color: black;
+}
+
+/* Main Content */
+.item3 {
+    grid-area: main;
+}
+
+.item3 h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.item3 p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Right Sidebar */
+.item4 {
+    grid-area: right;
+    border: 2px solid blueviolet;
+    background-color: white;
+    padding: 15px;
+    color: black;
+}
+
+.item4 h2 {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.item4 li {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.item5 {
+    grid-area: footer;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .item1 {
+        grid-area: 1 / span 6;
+    }
+
+    .item2{
+        grid-area: 2 / span 1;
+    }
+
+    .item3 {
+        grid-area: 2 / span 4;
+    }
+
+    .item4 {
+        grid-area: 3 / span 6;
+    }
+
+    .item5 {
+        grid-area: 4 / span 6;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .item1 {
+        grid-area: 1 / span 6;
+    }
+
+    .item2{
+        grid-area: 2 / span 1;
+    }
+
+    .item3 {
+        grid-area: 2 / span 4;
+    }
+
+    .item4 {
+        grid-area: 2 / span 1;
+    }
+
+    .item5 {
+        grid-area: 3 / span 6;
+    }
+}
